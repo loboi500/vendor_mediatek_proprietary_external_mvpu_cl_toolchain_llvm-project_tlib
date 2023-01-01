@@ -1,0 +1,45 @@
+mtk_cc_prebuilt_library {
+    arch: {
+        arm: {
+            cortex_a55: {
+                shared_libs: [
+                    "libmvpu_clc_vpu_isa",
+                    "libmvpu_clc_mvpu_elf",
+                    "libmvpu_clc_mvpu_utility",
+                    "libmvpu_config",
+                    "libz",
+                ],
+                srcs: [
+                    "arm_armv8-2a_cortex-a55/libmvpu_clc_cl_compiler.so",
+                ],
+            },
+        },
+        arm64: {
+            cortex_a55: {
+                shared_libs: [
+                    "libmvpu_clc_vpu_isa",
+                    "libmvpu_clc_mvpu_elf",
+                    "libmvpu_clc_mvpu_utility",
+                    "libmvpu_config",
+                    "libz",
+                ],
+                srcs: [
+                    "arm64_armv8-2a_cortex-a55/libmvpu_clc_cl_compiler.so",
+                ],
+            },
+        },
+    },
+    export_include_dirs: [
+        "include",
+    ],
+    mtk_product_line: "tablet",
+    mtk_src_path: "vendor/mediatek/proprietary/external/mvpu_cl_toolchain/llvm-project",
+    mtk_type: "cc_prebuilt_library_shared",
+    name: "libmvpu_clc_cl_compiler",
+    proprietary: true,
+    strip: {
+        none: true,
+    },
+    vendor: true,
+}
+
